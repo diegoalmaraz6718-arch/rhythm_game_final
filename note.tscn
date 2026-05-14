@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d3gyrx2ymus2k"]
+
+[ext_resource type="Script" uid="uid://clob5id4vtdt0" path="res://scripts/note.gd" id="1_script"]
+
+[sub_resource type="Gradient" id="Gradient_t3yvt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3yvt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="Note" type="Node2D" unique_id=39076766]
+script = ExtResource("1_script")
+
+[node name="Trail" type="CPUParticles2D" parent="." unique_id=1238011111]
+amount = 3
+lifetime = 0.09999999999999999
+emission_shape = 3
+emission_rect_extents = Vector2(24, 2)
+gravity = Vector2(0, -250)
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_t3yvt")
+
+[node name="Border" type="Panel" parent="." unique_id=719901981]
+offset_left = -28.0
+offset_top = -10.0
+offset_right = 28.0
+offset_bottom = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t3yvt")
+
+[node name="CoreGlow" type="ColorRect" parent="." unique_id=1931391201]
+modulate = Color(1, 1, 1, 0.68235296)
+offset_left = -27.5
+offset_top = -8.0
+offset_right = 25.5
+offset_bottom = 8.0

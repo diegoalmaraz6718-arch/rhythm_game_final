@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d03m7alqbpw4v"]
+
+[ext_resource type="Script" uid="uid://cioaa80oshu53" path="res://scripts/song_analyzer.gd" id="1_analyzer"]
+[ext_resource type="FontFile" uid="uid://du4vnpp518n34" path="res://RhythmicHits.ttf" id="2_b8vw8"]
+[ext_resource type="Script" uid="uid://7u6juafnacoo" path="res://scripts/analyzer_screen.gd" id="2_screen"]
+
+[node name="AnalyzerScreen" type="Control" unique_id=73746540]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_screen")
+
+[node name="Background" type="ColorRect" parent="." unique_id=451244243]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.06, 0.06, 0.1, 1)
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1911028573]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 180.0
+offset_right = 950.0
+offset_bottom = 480.0
+
+[node name="SongNameLabel" type="Label" parent="VBox" unique_id=58274080]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b8vw8")
+theme_override_font_sizes/font_size = 30
+text = "Cargando..."
+horizontal_alignment = 1
+
+[node name="Sep1" type="HSeparator" parent="VBox" unique_id=2003703965]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="VBox" unique_id=23941381]
+modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b8vw8")
+theme_override_font_sizes/font_size = 18
+text = "Preparando..."
+horizontal_alignment = 1
+
+[node name="Sep2" type="HSeparator" parent="VBox" unique_id=778659400]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="VBox" unique_id=793333857]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="SongAnalyzer" type="Node" parent="." unique_id=186969175]
+script = ExtResource("1_analyzer")

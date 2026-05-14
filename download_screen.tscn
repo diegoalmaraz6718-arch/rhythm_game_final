@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bom0pdpdob2pc"]
+
+[ext_resource type="Script" uid="uid://c7p2ewc5ugvha" path="res://download_screen.gd" id="1_qk6fb"]
+[ext_resource type="FontFile" uid="uid://du4vnpp518n34" path="res://RhythmicHits.ttf" id="2_tijul"]
+
+[node name="Control" type="Control" unique_id=1199681893]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qk6fb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2099378972]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 652.0
+color = Color(0.07058824, 0.07058824, 0.12156863, 1)
+
+[node name="Label" type="Label" parent="." unique_id=90727969]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 54.0
+offset_right = 816.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("2_tijul")
+theme_override_font_sizes/font_size = 40
+text = "Buscador de Canciones"
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1868321080]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 146.0
+offset_right = 1087.0
+offset_bottom = 571.0
+
+[node name="Label" type="Label" parent="VBox" unique_id=990560965]
+layout_mode = 2
+
+[node name="SearchField" type="LineEdit" parent="VBox" unique_id=2037029441]
+layout_mode = 2
+placeholder_text = "Buscar Canciones"
+
+[node name="SearchButton" type="Button" parent="VBox" unique_id=1744842529]
+layout_mode = 2
+text = "Buscar "
+
+[node name="ProgressBar" type="ProgressBar" parent="VBox" unique_id=1615008812]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="VBox" unique_id=1284498867]
+layout_mode = 2
+
+[node name="ResultsList" type="ItemList" parent="VBox" unique_id=1591193803]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+
+[node name="DownloadButton" type="Button" parent="VBox" unique_id=56364519]
+layout_mode = 2
+text = "Descarga Seleccionada
+"
+
+[node name="BackButton" type="Button" parent="VBox" unique_id=1453224675]
+layout_mode = 2
+text = "Regresar"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=459101684]

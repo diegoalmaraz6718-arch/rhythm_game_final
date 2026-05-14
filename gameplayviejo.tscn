@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://gameplay_scene"]
+
+[ext_resource type="Script" path="res://scripts/gameplay.gd" id="1_script"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.05, 0.05, 0.09, 1)
+
+[node name="LaneLines" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Master"
+
+[node name="Notes" type="Node2D" parent="."]
+
+[node name="HitLine" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 300.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 38
+text = "0"
+
+[node name="ComboLabel" type="Label" parent="UI"]
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 300.0
+offset_bottom = 96.0
+modulate = Color(1.0, 0.9, 0.3, 1)
+theme_override_font_sizes/font_size = 26
+text = ""
+
+[node name="JudgeLabel" type="Label" parent="UI"]
+offset_left = 376.0
+offset_top = 260.0
+offset_right = 776.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 38
+text = ""
+horizontal_alignment = 1
+
+[node name="SongProgress" type="ProgressBar" parent="UI"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1152.0
+offset_bottom = 8.0
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
+[node name="PauseHint" type="Label" parent="UI"]
+offset_right = 1152.0
+offset_top = 14.0
+offset_bottom = 46.0
+modulate = Color(0.45, 0.45, 0.45, 1)
+theme_override_font_sizes/font_size = 14
+text = "ESC = Salir al menu"
+horizontal_alignment = 2

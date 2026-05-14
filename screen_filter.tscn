@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bkyfxqafqukre"]
+
+[ext_resource type="Shader" uid="uid://c1ara00x100wl" path="res://scenes/screen_filter.gdshader" id="1_hhnta"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hhnta"]
+shader = ExtResource("1_hhnta")
+shader_parameter/is_active = false
+
+[node name="ScreenFilter" type="CanvasLayer" unique_id=1109984179]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=318156016]
+material = SubResource("ShaderMaterial_hhnta")
+anchors_preset = -1
+anchor_right = 0.011284722
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 1136.0
+offset_bottom = 647.0
+mouse_filter = 2

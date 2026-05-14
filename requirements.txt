@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+librosa
+numpy
+requests
+soundfile
+pydub
+miniaudio
+lameenc
+yt-dlp
+Pillow
+python-dotenv

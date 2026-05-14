@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://bpfccrqogeywn"]
+
+[ext_resource type="Script" uid="uid://dq3t30cdxdq7" path="res://scripts/gameplay.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://x07g0ofh52kb" path="res://scripts/database.gd" id="2_00tan"]
+[ext_resource type="FontFile" uid="uid://du4vnpp518n34" path="res://RhythmicHits.ttf" id="2_l1v76"]
+[ext_resource type="Script" uid="uid://dttyfnl5ygkmg" path="res://scripts/video_background.gd" id="3_videobg"]
+
+[sub_resource type="Environment" id="Environment_ct7aa"]
+background_mode = 3
+glow_enabled = true
+glow_levels/4 = 1.85
+glow_levels/5 = 1.47
+glow_levels/6 = 1.75
+glow_intensity = 4.26
+glow_blend_mode = 0
+glow_hdr_threshold = 0.85
+
+[node name="Gameplay" type="Node2D" unique_id=558646755]
+script = ExtResource("1_script")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1037771439]
+environment = SubResource("Environment_ct7aa")
+
+[node name="VideoBG" type="TextureRect" parent="." unique_id=100000001]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_videobg")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="VideoBG" unique_id=100000002]
+timeout = 20.0
+
+[node name="Overlay" type="ColorRect" parent="VideoBG" unique_id=100000003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="Background" type="ColorRect" parent="." unique_id=892732215]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.05, 0.05, 0.09, 0)
+
+[node name="LaneLines" type="Node2D" parent="." unique_id=212038648]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=979652538]
+
+[node name="Notes" type="Node2D" parent="." unique_id=960610775]
+
+[node name="HitLine" type="Node2D" parent="." unique_id=1625356426]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=316812092]
+
+[node name="P1" type="Control" parent="UI" unique_id=185560724]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 90.0
+
+[node name="ScoreLabel" type="Label" parent="UI/P1" unique_id=1997641582]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 300.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_l1v76")
+theme_override_font_sizes/font_size = 38
+text = "0"
+
+[node name="JudgeLabel" type="Label" parent="UI/P1" unique_id=1450067754]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 260.0
+offset_right = 776.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("2_l1v76")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+script = ExtResource("2_00tan")
+
+[node name="ComboLabel" type="Label" parent="UI/P1" unique_id=304291555]
+modulate = Color(1, 0.9, 0.3, 1)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 300.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_l1v76")
+theme_override_font_sizes/font_size = 26
+
+[node name="P2" type="Control" parent="UI" unique_id=79495615]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1000.0
+offset_top = 50.0
+offset_right = 1040.0
+offset_bottom = 90.0
+
+[node name="ScoreLabel" type="Label" parent="UI/P2" unique_id=821796831]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 300.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_l1v76")
+theme_override_font_sizes/font_size = 38
+text = "0"
+
+[node name="JudgeLabel" type="Label" parent="UI/P2" unique_id=769448538]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 260.0
+offset_right = 776.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("2_l1v76")
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+
+[node name="ComboLabel" type="Label" parent="UI/P2" unique_id=1922141427]
+modulate = Color(1, 0.9, 0.3, 1)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 300.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("2_l1v76")
+theme_override_font_sizes/font_size = 26
+
+[node name="SongProgress" type="ProgressBar" parent="UI" unique_id=1055181937]
+offset_right = 1152.0
+offset_bottom = 8.0
+show_percentage = false
+
+[node name="PauseHint" type="Label" parent="UI" unique_id=855876539]
+modulate = Color(0.45, 0.45, 0.45, 1)
+offset_top = 14.0
+offset_right = 1152.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("2_l1v76")
+theme_override_font_sizes/font_size = 14
+text = "ESC = Salir al menu"
+horizontal_alignment = 2

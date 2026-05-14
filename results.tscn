@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bgsusrxoojc40"]
+
+[ext_resource type="Script" uid="uid://cc6y86h583a22" path="res://scripts/results.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://du4vnpp518n34" path="res://RhythmicHits.ttf" id="2_21kdr"]
+
+[node name="Results" type="Control" unique_id=2095361645]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2076931179]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.06, 0.06, 0.1, 1)
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1464031696]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -300.0
+offset_right = 275.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SongLabel" type="Label" parent="VBox" unique_id=925747059]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_21kdr")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="ResultsBox" type="HBoxContainer" parent="VBox" unique_id=224979237]
+layout_mode = 2
+alignment = 1
+
+[node name="P1" type="VBoxContainer" parent="VBox/ResultsBox" unique_id=1029708103]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ResultsBox/P1" unique_id=318465647]
+layout_mode = 2
+text = "--- Jugador 1 -----"
+
+[node name="ScoreLabel" type="Label" parent="VBox/ResultsBox/P1" unique_id=1822105648]
+layout_mode = 2
+
+[node name="AccuracyLabel" type="Label" parent="VBox/ResultsBox/P1" unique_id=1088186815]
+layout_mode = 2
+
+[node name="ComboLabel" type="Label" parent="VBox/ResultsBox/P1" unique_id=226396318]
+layout_mode = 2
+
+[node name="P2" type="VBoxContainer" parent="VBox/ResultsBox" unique_id=1776686410]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/ResultsBox/P2" unique_id=1971748129]
+layout_mode = 2
+text = "--- Jugador 2 -----"
+
+[node name="ScoreLabel" type="Label" parent="VBox/ResultsBox/P2" unique_id=672095411]
+layout_mode = 2
+
+[node name="AccuracyLabel" type="Label" parent="VBox/ResultsBox/P2" unique_id=1681185321]
+layout_mode = 2
+
+[node name="ComboLabel" type="Label" parent="VBox/ResultsBox/P2" unique_id=657539184]
+layout_mode = 2
+
+[node name="NamesBox" type="HBoxContainer" parent="VBox" unique_id=219896636]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelP1" type="Label" parent="VBox/NamesBox" unique_id=926495955]
+layout_mode = 2
+text = "Jugador1"
+
+[node name="NameFieldP1" type="LineEdit" parent="VBox/NamesBox" unique_id=1021734817]
+layout_mode = 2
+
+[node name="LabelP2" type="Label" parent="VBox/NamesBox" unique_id=1250117059]
+layout_mode = 2
+text = "Jugador 2:"
+
+[node name="NameFieldP2" type="LineEdit" parent="VBox/NamesBox" unique_id=1331928376]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="VBox" unique_id=1712267971]
+layout_mode = 2
+text = "Guardar Puntuacion"
+
+[node name="Leaderboard" type="ItemList" parent="VBox" unique_id=1213998264]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBox" unique_id=1292136501]
+layout_mode = 2
+text = "Regresar"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=516096206]
